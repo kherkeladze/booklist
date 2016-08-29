@@ -11,7 +11,6 @@ class User implements IUserInterface {
     }
 
     public get validation() : any {
-        console.log(this);
         return {
             isValid: true,
             errors: {}

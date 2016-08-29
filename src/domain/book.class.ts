@@ -14,7 +14,6 @@ class Book implements IBookInterface {
     }
 
     public get validation() : any {
-        console.log(this);
         return {
             isValid: true,
             errors: {}
