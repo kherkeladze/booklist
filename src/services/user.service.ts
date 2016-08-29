@@ -1,18 +1,26 @@
 import User from '../domain/user.class'
+import UserRepository from '../repositories/user.repository'
 
 class UserService {
 
-    public static create(): boolean {
-        //Todo not implemented
-        return true;
+    public static async create(user): any {
+        let item = new User(user);
+        if(item.validation.isValid) {
+            return await UserRepository.create(item);
+        }
+        else return user.validation.errors;
     }
-    public static update(): boolean {
-        //Todo not implemented
-        return true;
+
+    public static async update(user): any {
+        let item = new User(user);
+        if(item.validation.isValid) {
+            return await UserRepository.update(item);
+        }
+        else return user.validation.errors;
     }
-    public static remove(): boolean {
-        //Todo not implemented
-        return true;
+
+    public static async remove(id: string): boolean {
+        return await UserRepository.remove(id);
     }
 }
 

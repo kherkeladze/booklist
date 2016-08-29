@@ -10,9 +10,12 @@ class User implements IUserInterface {
        Object.assign(this, user);
     }
 
-    public validation(): boolean {
-        //Todo not implemented
-        return true;
+    public get validation() : any {
+        console.log(this);
+        return {
+            isValid: true,
+            errors: {}
+        }
     }
 }
 
